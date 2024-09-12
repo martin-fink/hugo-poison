@@ -1,6 +1,6 @@
 {{ define "main" -}}
 <div class="main-content">
-    {{ $file := "content/index.md" }}
+    {{ $file := "content/about/about.md" }}
     {{ $content := readFile $file }}
     {{ $convertedContent := $content | markdownify }}
     {{ $convertedContent }}
