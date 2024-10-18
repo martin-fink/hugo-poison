@@ -78,8 +78,14 @@
 {{ end -}}
 
 <!-- Search Engine Crawler Tags -->
-<meta name="robots" content="index,follow" />
-<meta name="googlebot" content="index,follow" />
+{{- if and (isset .Params "index") (not .Params.Index) -}}
+<meta name="debugging" content="{{.Params}}">
+  <meta name = "robots" content = "noindex">
+  <meta name = "googlebot" content = "noindex">
+{{- else -}}
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+{{- end -}}
 
 <!-- Social Media Tags -->
 {{if (or (ne .Site.Params.twitter_url nil) (ne .Site.Params.x_url nil))}}
