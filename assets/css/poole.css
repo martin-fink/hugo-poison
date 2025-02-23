@@ -116,6 +116,10 @@ ul, ol, dl {
   margin-bottom: 1rem;
 }
 
+details div ul {
+  margin-bottom: 0rem;
+}
+
 dt {
   font-weight: bold;
 }
