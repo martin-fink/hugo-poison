@@ -176,10 +176,6 @@ body > .wrapper {
     color: gray;
     font-style: italic;
 }
-.reading-time-separator {
-    margin-left: 0.2em;
-    margin-right: 0.2em;
-}
 .newsletters .help-block-for-success {
     display: none;
     margin: 0.25rem 1rem 0.25rem 0;
