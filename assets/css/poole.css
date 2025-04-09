@@ -120,6 +120,10 @@ details div ul {
   margin-bottom: 0rem;
 }
 
+p:has(+ details) {
+  margin-bottom: 0rem !important;
+}
+
 dt {
   font-weight: bold;
 }
