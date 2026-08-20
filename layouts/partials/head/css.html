@@ -1,5 +1,6 @@
 <style>
     body {
+        color-scheme: light;
         --sidebar-bg-color: {{ with .Site.Params.sidebar_bg_color }}{{ . }}{{ else }}#202020{{ end }};
         --sidebar-img-border-color: {{ with .Site.Params.sidebar_img_border_color }}{{ . }}{{ else }}#515151{{ end }};
         --sidebar-p-color: {{ with .Site.Params.sidebar_p_color }}{{ . }}{{ else }}#909090{{ end }};
@@ -21,7 +22,25 @@
         --moon-sun-color: {{ with .Site.Params.moon_sun_color }}{{ . }}{{ else }}#FFF{{ end }};
         --moon-sun-background-color: {{ with .Site.Params.moon_sun_background_color }}{{ . }}{{ else }}#515151{{ end }};
     }
+    @media (prefers-color-scheme: dark) {
+        body:not(.light-theme) {
+            color-scheme: dark;
+            --text-color: {{ with .Site.Params.text_color_dark }}{{ . }}{{ else }}#eee{{ end }};
+            --bkg-color: {{ with .Site.Params.content_bg_color_dark }}{{ . }}{{ else }}#121212{{ end }};
+            --post-title-color: {{ with .Site.Params.post_title_color_dark }}{{ . }}{{ else }}#DBE2E9{{ end }};
+            --list-color: {{ with .Site.Params.list_color_dark }}{{ . }}{{ else }}#9d9d9d{{ end }};
+            --link-color: {{ with .Site.Params.link_color_dark }}{{ . }}{{ else }}#268bd2{{ end }};
+            --date-color: {{ with .Site.Params.date_color_dark }}{{ . }}{{ else }}#9a9a9a{{ end }};
+            --table-border-color: {{ with .Site.Params.table_border_color_dark }}{{ . }}{{ else }}#515151{{ end }};
+            --table-stripe-color: {{ with .Site.Params.table_stripe_color_dark }}{{ . }}{{ else }}#202020{{ end }};
+            --code-color: {{ with .Site.Params.code_color_dark }}{{ . }}{{ else }}#fff{{ end }};
+            --code-background-color: {{ with .Site.Params.code_background_color_dark }}{{ . }}{{ else }}#515151{{ end }};
+            --code-block-color: {{ with .Site.Params.code_block_color_dark }}{{ . }}{{ else }}#fff{{ end }};
+            --code-block-background-color: {{ with .Site.Params.code_block_background_color_dark }}{{ . }}{{ else }}#272822{{ end }};
+        }
+    }
     body.dark-theme {
+        color-scheme: dark;
         --text-color: {{ with .Site.Params.text_color_dark }}{{ . }}{{ else }}#eee{{ end }};
         --bkg-color: {{ with .Site.Params.content_bg_color_dark }}{{ . }}{{ else }}#121212{{ end }};
         --post-title-color: {{ with .Site.Params.post_title_color_dark }}{{ . }}{{ else }}#DBE2E9{{ end }};
@@ -39,3 +58,4 @@
         background-color: var(--bkg-color);
     }
 </style>
+<noscript><style>.light-dark { display: none; }</style></noscript>

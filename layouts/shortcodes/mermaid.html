@@ -3,10 +3,9 @@
 <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
 
-    const lsTheme = localStorage.getItem("theme")
-    const hugoTheme = document.body.classList.contains("dark-theme") ? "dark" : null
-    const currTheme = lsTheme ? lsTheme : hugoTheme;
-    const mermaidTheme = currTheme == "light" ? "default" : "dark"
+    const savedTheme = localStorage.getItem("theme");
+    const theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const mermaidTheme = theme === "dark" ? "dark" : "default";
 
     mermaid.initialize({theme: mermaidTheme});
 </script>
