@@ -2,7 +2,7 @@
 {{ if .Site.Params.light_dark }}
     {{ partial "light_dark.html" . }}
 {{ end }}
-<div class="post">
+<div class="post publications">
     {{ with .Site.GetPage "/publications" }}
         {{ if .Pages }}
             {{ range .Pages }}

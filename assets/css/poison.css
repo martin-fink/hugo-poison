@@ -467,6 +467,71 @@ div.highlight pre {
 #page-nav span {
     margin: 0 0.2em;
 }
+.publication {
+    margin: 0.75rem 0;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--table-border-color);
+    border-radius: 0.35rem;
+    background-color: var(--table-stripe-color);
+}
+.publication > :first-child {
+    margin-top: 0;
+}
+.publication > :last-child {
+    margin-bottom: 0;
+}
+.publication h3 {
+    margin-bottom: 0;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+.publication p {
+    margin: 0.4rem 0;
+}
+.publication h3 + p {
+    margin-top: 0;
+    color: var(--date-color);
+}
+.publication > p:has(+ details) {
+    display: inline;
+    margin: 0;
+}
+.publication > details {
+    display: inline-block;
+    margin-top: 0;
+}
+.publication > details::before {
+    content: " · ";
+    color: var(--date-color);
+}
+.publication > details summary {
+    display: inline;
+    cursor: pointer;
+    color: var(--link-color);
+    list-style: none;
+}
+.publication > details summary::before {
+    content: none;
+}
+.publication > details summary::-webkit-details-marker {
+    display: none;
+}
+.publication > details[open] summary::before {
+    content: "›";
+    display: inline-block;
+    margin-right: 0.15em;
+    transform: rotate(90deg);
+}
+.publication > details[open] {
+    display: block;
+    margin-top: 0.4rem;
+}
+.publication > details[open]::before {
+    content: none;
+}
+.publication > details > div {
+    margin-top: 0.4rem;
+}
 .next {
     float: right;
     display: inline;
