@@ -11,6 +11,10 @@ body.layout-reverse .wrapper {
     color: var(--sidebar-p-color);
 }
 
+.mobile-nav-scroll {
+    display: none;
+}
+
 @media (min-width: 48em) {
     .bullet {
         margin-left: 1em;
@@ -53,6 +57,110 @@ body.layout-reverse .wrapper {
         width: 20px;
         height: 20px;
         color: black;
+    }
+    .sidebar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    .sidebar-inner-page {
+        padding: 0.5rem 0 0;
+    }
+    .sidebar-inner-page .container {
+        padding: 0;
+    }
+    .sidebar-inner-page .light-dark {
+        position: absolute;
+        top: calc(0.5rem + 4px);
+        right: 0.5rem;
+        z-index: 1;
+    }
+    .sidebar-inner-page .btn-light-dark {
+        width: 36px;
+        height: 36px;
+        margin: 0;
+    }
+    .sidebar-inner-page .sidebar-about {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 3.25rem 0 1rem;
+    }
+    .sidebar-inner-page .sidebar-about .brand {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    .sidebar-inner-page .sidebar-about img {
+        width: 36px;
+        height: 36px;
+        margin: 0 0.65rem 0 0;
+    }
+    .sidebar-inner-page .sidebar-about .brand h1 {
+        margin: 0;
+        font-size: 1.1rem;
+        white-space: nowrap;
+    }
+    .sidebar-inner-page .lead,
+    .sidebar-inner-page .social {
+        display: none;
+    }
+    .sidebar-inner-page .sidebar-nav {
+        display: flex;
+        gap: 0;
+        overflow-x: auto;
+        margin: 0.5rem 0 0;
+        padding: 0 3.25rem 0 1rem;
+        scrollbar-width: none;
+        white-space: nowrap;
+    }
+    .sidebar-inner-page nav {
+        position: relative;
+    }
+    .sidebar-inner-page .mobile-nav-scroll {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 2.5rem;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0 0.4rem 0 0;
+        border: 0;
+        color: var(--sidebar-a-color);
+        font-size: 1.25rem;
+        line-height: 1;
+        cursor: pointer;
+        background: linear-gradient(to right, transparent, var(--sidebar-bg-color) 45%);
+    }
+    .sidebar-inner-page .mobile-nav-scroll span {
+        transform: translateY(-2px);
+    }
+    .sidebar-inner-page .sidebar-nav::-webkit-scrollbar {
+        display: none;
+    }
+    .sidebar-inner-page .sidebar-nav-item {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+    .sidebar-inner-page .sidebar-nav-item + .sidebar-nav-item::before {
+        content: "·";
+        margin: 0 0.6rem;
+        color: var(--sidebar-p-color);
+    }
+    .sidebar-inner-page .sidebar-nav-item a {
+        display: inline-block;
+        min-height: 44px;
+        line-height: 44px;
+    }
+    .sidebar-inner-page .sidebar-nav-item.active a {
+        border-bottom: 3px solid var(--sidebar-a-color);
+        font-weight: bold;
+    }
+    .sidebar-inner-page + .content {
+        padding-top: 1rem;
     }
 }
 
