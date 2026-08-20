@@ -101,9 +101,27 @@ body.layout-reverse .wrapper {
         font-size: 1.1rem;
         white-space: nowrap;
     }
-    .sidebar-inner-page .lead,
-    .sidebar-inner-page .social {
+    .sidebar-inner-page .lead {
         display: none;
+    }
+    .sidebar-inner-page .sidebar-socials {
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        padding: 0.15rem 0.5rem 0.35rem;
+        scrollbar-width: none;
+    }
+    .sidebar-inner-page .sidebar-socials::-webkit-scrollbar {
+        display: none;
+    }
+    .sidebar-inner-page .social {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        margin: 0 0.1rem;
+        flex: 0 0 auto;
     }
     .sidebar-inner-page .sidebar-nav {
         display: flex;
