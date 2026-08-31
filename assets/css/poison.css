@@ -500,10 +500,6 @@ div.highlight pre {
     display: inline-block;
     margin-top: 0;
 }
-.publication > details::before {
-    content: " · ";
-    color: var(--date-color);
-}
 .publication > details summary {
     display: inline;
     cursor: pointer;
